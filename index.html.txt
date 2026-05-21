@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Necesariamente Necesario | Daniel Présiga</title>
+    
+    <!-- Tailwind CSS para los estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons para los iconos -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Configuración personalizada de Tailwind con tu paleta de colores -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#FDFBF7', // Crema muy suave (Fondo base)
+                            100: '#F8D17E', // Amarillo de la paleta
+                            400: '#F89B5B', // Naranja de la paleta
+                            500: '#F06543', // Coral de la paleta
+                            600: '#3F8A8B', // Teal/Verde azulado (Color principal)
+                            700: '#326E6F', // Teal oscuro (Para hovers)
+                            800: '#E23A47', // Rojo de la paleta
+                            900: '#224A4B', // Teal muy oscuro (Footer y fondos)
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-brand-50 flex flex-col min-h-screen">
+
+    <!-- Navegación -->
+    <header class="bg-white/90 backdrop-blur-md shadow-sm fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <i data-lucide="heart-handshake" class="text-brand-600 w-8 h-8"></i>
+                    <span class="font-bold text-xl text-gray-900 leading-tight">Necesariamente<br>Necesario</span>
+                </div>
+                
+                <!-- Menú de Escritorio -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-600 hover:text-brand-600 transition-colors font-medium">Inicio</a>
+                    <a href="#sobre-mi" class="text-gray-600 hover:text-brand-600 transition-colors font-medium">Sobre Mí</a>
+                    <a href="#enfoque" class="text-gray-600 hover:text-brand-600 transition-colors font-medium">Mi Enfoque</a>
+                    <a href="#servicios" class="text-gray-600 hover:text-brand-600 transition-colors font-medium">Servicios</a>
+                </nav>
+
+                <!-- Botón CTA (Call to Action) -->
+                <div class="hidden md:flex items-center">
+                    <a href="#agendar" class="bg-brand-600 hover:bg-brand-500 text-white px-6 py-2.5 rounded-full font-medium transition-colors shadow-md hover:shadow-lg flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        Agendar cita
+                    </a>
+                </div>
+
+                <!-- Botón de Menú Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-brand-600 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil (Oculto por defecto) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">Inicio</a>
+                <a href="#sobre-mi" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">Sobre Mí</a>
+                <a href="#enfoque" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">Mi Enfoque</a>
+                <a href="#servicios" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">Servicios</a>
+                <a href="#agendar" class="block mt-4 px-3 py-2 rounded-md text-base font-medium text-white bg-brand-600 hover:bg-brand-500 text-center">
+                    Agendar cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow pt-20">
+        
+        <!-- Sección Hero -->
+        <section id="inicio" class="relative bg-brand-50 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 lg:pt-24 lg:pb-32">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Texto -->
+                    <div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight mb-6 leading-tight">
+                            Un espacio para <br>
+                            <span class="text-brand-600 relative">
+                                construirnos y escucharnos
+                                <svg class="absolute w-full h-3 -bottom-1 left-0 text-brand-100 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none"/></svg>
+                            </span>
+                        </h1>
+                        <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl leading-relaxed">
+                            Atención psicológica virtual desde una mirada crítica, profundamente humana y ética. Porque tu historia importa y tu bienestar es, sencillamente, <strong>necesariamente necesario</strong>.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                            <a href="#agendar" class="px-8 py-3 bg-brand-600 text-white rounded-full font-semibold text-lg hover:bg-brand-500 transition-colors shadow-lg shadow-brand-500/30 text-center flex justify-center items-center gap-2">
+                                Iniciar proceso
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Imagen Hero -->
+                    <div class="relative hidden lg:block">
+                        <div class="absolute inset-0 bg-brand-100 rounded-full blur-3xl opacity-60 transform translate-x-10 -translate-y-10"></div>
+                        <div class="relative z-10 bg-gray-50 rounded-3xl shadow-2xl w-full h-[550px] flex flex-col items-center justify-center border-2 border-dashed border-gray-300 text-center p-8 overflow-hidden">
+                            <i data-lucide="users" class="w-12 h-12 text-brand-400 mb-4"></i>
+                            <p class="text-gray-700 font-medium text-lg">Foto grupal UPB (image.png)</p>
+                            <!-- La imagen cargará cuando tengas el archivo localmente -->
+                            <img src="image.png" alt="Trabajando con estudiantes" class="absolute inset-0 w-full h-full object-cover bg-white" onerror="this.style.opacity='0'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Sobre Mí -->
+        <section id="sobre-mi" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="w-full md:w-1/2">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-brand-100 rounded-3xl transform -translate-x-4 translate-y-4"></div>
+                            <div class="relative z-10 rounded-3xl shadow-xl w-full h-[500px] bg-brand-50 flex flex-col items-center justify-center overflow-hidden border border-brand-100 border-dashed">
+                                <i data-lucide="user" class="w-16 h-16 text-brand-300 mb-4"></i>
+                                <p class="text-brand-600 font-medium px-6 text-center text-sm">Tu foto de perfil (image_7604f4.jpg)</p>
+                                <img src="image_7604f4.jpg" alt="Daniel Présiga - Psicólogo" class="absolute inset-0 w-full h-full object-cover bg-white" onerror="this.style.opacity='0'">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-brand-600 font-semibold tracking-wide uppercase mb-2">Conóceme</h2>
+                        <h3 class="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-6">Hola, soy Daniel Présiga</h3>
+                        <div class="prose prose-lg text-gray-600">
+                            <p class="mb-4">
+                                Soy psicólogo titulado de la <strong>Universidad Pontificia Bolivariana</strong>, con énfasis en psicología clínica y neuropsicología. 
+                            </p>
+                            <p class="mb-4 font-medium text-gray-800 italic border-l-4 border-brand-400 pl-4 py-1 bg-brand-50 rounded-r-lg">
+                                Cuento con dos años de experiencia desempeñándome como psicólogo educativo y clínico, acompañando procesos con adolescentes y adultos.
+                            </p>
+                            <p class="mb-4">
+                                Mi enfoque se fundamenta en la psicología basada en la evidencia —especialmente en el modelo cognitivo-conductual y las terapias de tercera generación—, pero mantengo una postura crítica frente a ellas para no perder de vista la singularidad de cada persona.
+                            </p>
+                            <p class="mb-4">
+                                En la actualidad, me encuentro ofreciendo espacios de <strong>asesoría y atención psicológica</strong> desde un ejercicio profesional humano, académico y principalmente ético.
+                            </p>
+                            <p>
+                                Fuera del consultorio, disfruto mucho sumergirme en un buen libro, compartir con mis amigos, conversar con mi abuela y escuchar mucha salsa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Mi Enfoque -->
+        <section id="enfoque" class="py-20 bg-brand-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-brand-600 font-semibold tracking-wide uppercase mb-2">Otra forma de hacer psicología</h2>
+                    <p class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Más allá de las etiquetas</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="text-center p-6 bg-white rounded-3xl shadow-sm border border-brand-50">
+                        <div class="w-16 h-16 bg-brand-100 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-600">
+                            <i data-lucide="eye" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Mirada Crítica</h3>
+                        <p class="text-gray-600 leading-relaxed">Cuestionamos el malestar desde un contexto social, histórico y subjetivo. Desde una mirada horizontal y compasiva.</p>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-3xl shadow-sm border border-brand-50">
+                        <div class="w-16 h-16 bg-brand-400 rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                            <i data-lucide="users" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Acompañamiento Humano</h3>
+                        <p class="text-gray-600 leading-relaxed">Una relación horizontal, compasiva y crítica. Eres el dueño de tu propia vida; mi rol es acompañarte apuntando hacia tu autonomía y bienestar, y no generar una relación simbiótica en el proceso.</p>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-3xl shadow-sm border border-brand-50">
+                        <div class="w-16 h-16 bg-brand-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                            <i data-lucide="scale" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Profundamente Ético</h3>
+                        <p class="text-gray-600 leading-relaxed">Un espacio seguro, confidencial y respetuoso de tu singularidad, sin juicios morales ni fórmulas mágicas prefabricadas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Servicios -->
+        <section id="servicios" class="bg-white py-20 lg:py-28">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-brand-600 font-semibold tracking-wide uppercase mb-2">Servicios Virtuales</h2>
+                    <p class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Un espacio a tu medida</p>
+                    <p class="mt-4 text-xl text-gray-600">Atención psicológica en línea, estés donde estés, en un entorno seguro y confidencial.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Tarjeta 1 -->
+                    <div class="bg-brand-50 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all border border-transparent hover:border-brand-400 group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-brand-600 shadow-sm">
+                                <i data-lucide="user" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Psicoterapia Individual</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-lg">Sesiones de 50 minutos dedicadas a explorar tu historia, comprender tu malestar actual y construir herramientas de afrontamiento desde el respeto por tu subjetividad.</p>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="bg-brand-50 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all border border-transparent hover:border-brand-400 group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-brand-600 shadow-sm">
+                                <i data-lucide="message-circle-heart" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900">Acompañamiento Específico</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-lg">Sesiones enfocadas en atravesar crisis vitales, duelos, transiciones o momentos de alta carga emocional, brindando contención y claridad cuando más lo necesitas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section id="agendar" class="bg-brand-900 py-24 relative overflow-hidden text-center">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h2 class="text-4xl font-extrabold text-white sm:text-5xl mb-6">Da el primer paso</h2>
+                <p class="text-xl text-brand-100 mb-12 max-w-2xl mx-auto">Escríbeme directamente por WhatsApp o correo para coordinar el horario que mejor se adapte a ti.</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <a href="https://wa.me/573148255932?text=Hola%20Daniel,%20vengo%20de%20tu%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20agendar%20una%20cita." target="_blank" class="px-8 py-4 bg-[#25D366] text-white rounded-full font-bold text-lg hover:bg-[#1ebd5b] transition-all shadow-xl flex items-center justify-center gap-3 transform hover:scale-105">
+                        <i data-lucide="message-square" class="w-6 h-6"></i>
+                        Agendar por WhatsApp
+                    </a>
+                    <a href="mailto:presigalondono@gmail.com?subject=Consulta%20Psicol%C3%B3gica" class="px-8 py-4 bg-transparent border-2 border-brand-100 text-white rounded-full font-bold text-lg hover:bg-brand-800 transition-colors flex items-center justify-center gap-3">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                        Enviar un correo
+                    </a>
+                </div>
+                <p class="text-brand-100/60 mt-8 text-sm">Respondo mensajes de lunes a viernes, de 9am a 6pm.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 text-gray-400 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="heart-handshake" class="text-brand-500 w-6 h-6"></i>
+                    <span class="font-bold text-xl text-white">Necesariamente Necesario</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-sm text-center md:text-left flex flex-col md:flex-row justify-between">
+                <p>&copy; 2026 Daniel Présiga. Psicología humana y crítica.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de la página -->
+    <script>
+        // 1. Inicializar iconos de Lucide
+        lucide.createIcons();
+
+        // 2. Lógica para el Menú Móvil
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+            // Ocultar menú al tocar un enlace en versión móvil
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => menu.classList.add('hidden'));
+            });
+        }
+
+        // 3. Lógica para las Animaciones de Scroll (Aparición paulatina)
+        document.addEventListener("DOMContentLoaded", () => {
+            // Se inyecta el CSS de la animación al vuelo
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .reveal { 
+                    opacity: 0; 
+                    transform: translateY(30px); 
+                    transition: all 0.8s ease-out; 
+                }
+                .reveal.active { 
+                    opacity: 1; 
+                    transform: translateY(0); 
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Se buscan todos los elementos que queramos animar
+            const selectors = [
+                '#inicio h1', '#inicio p', '#inicio .flex', '#inicio .relative',
+                '#sobre-mi .w-full', '#enfoque .max-w-3xl', '#enfoque .text-center',
+                '#servicios .max-w-3xl', '#servicios .bg-brand-50', '#agendar .max-w-4xl'
+            ];
+            
+            const elementosAAnimar = document.querySelectorAll(selectors.join(', '));
+            
+            // Asignamos la clase base de la animación
+            elementosAAnimar.forEach((el, i) => {
+                el.classList.add('reveal');
+                // Efecto cascada (retraso dinámico)
+                if(el.parentElement.classList.contains('grid')) {
+                    el.style.transitionDelay = `${(i % 3) * 150}ms`;
+                }
+            });
+
+            // Configuramos el observador de la pantalla
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // Se activa cuando asoma un poco el elemento
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Dejar de observar una vez animado
+                    }
+                });
+            }, observerOptions);
+
+            // Empezamos a observar los elementos
+            elementosAAnimar.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
