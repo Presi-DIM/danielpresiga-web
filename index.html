@@ -93,11 +93,13 @@
                             </a>
                         </div>
                     </div>
-                    <div class="relative hidden lg:block">
+                    <!-- Se eliminó 'hidden lg:block' y se ajustó el margen superior para celular -->
+                    <div class="relative mt-8 lg:mt-0">
                         <div class="absolute inset-0 bg-brand-100 rounded-full blur-3xl opacity-60 transform translate-x-10 -translate-y-10"></div>
-                        <div class="relative z-10 bg-gray-50 rounded-3xl shadow-2xl w-full h-[550px] flex flex-col items-center justify-center border-2 border-dashed border-gray-300 text-center p-8 overflow-hidden">
+                        <!-- Se ajustó la altura a 300px en celular y 550px en PC para que sea responsivo -->
+                        <div class="relative z-10 bg-gray-50 rounded-3xl shadow-2xl w-full h-[300px] lg:h-[550px] flex flex-col items-center justify-center border-2 border-dashed border-gray-300 text-center p-8 overflow-hidden">
                             <i data-lucide="users" class="w-12 h-12 text-brand-400 mb-4"></i>
-                            <p class="text-gray-700 font-medium text-lg">Foto con estudiantes de UPB</p>
+                            <p class="text-gray-700 font-medium text-lg hidden lg:block">Foto con estudiantes de UPB</p>
                             <!-- Ruta de imagen ajustada para forzar la lectura en el mismo directorio -->
                             <img src="./IMG_20240506_090242.jpg" alt="Daniel trabajando con estudiantes de 11 de la UPB" class="absolute inset-0 w-full h-full object-cover bg-white" onerror="this.style.opacity='0'">
                         </div>
